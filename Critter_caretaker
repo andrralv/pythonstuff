@@ -31,16 +31,29 @@ class Critter(object):
 		print "I'm", self.name,  "and I feel", self.mood, "now.\n"
 		self.__pass_time()
 
-	def eat(self, food = 4):
-		print "Brruuupp. Thank you."
-		self.hunger -= food
+	def eat(self):
+		food = int(raw_input("How much do you want to feed your Critter? (1-5 slices of pizza)  "))
+		print "You entered ", food, "\n"
+		if (food > 5) or (food < 0):
+			print "You didn't enter a valid number (1-5)"
+		else:
+			print "Brruuupp. Thank you."
+			self.hunger -= food
+			if self.hunger < 0:
+				self.hunger = 0
+			self.__pass_time()
 
-	def play(self, fun = 4):
-		print "Wheee!"
-		self.boredom -= fun
-		if self.boredom < 0:
-			self.boredom = 0
-		self.__pass_time()
+	def play(self):
+		fun = int(raw_input("How much time do you want to play? (1 to 5 hours)  "))
+		print "You entered ", fun, "\n"
+		if (fun > 5) or (fun < 0):
+			print "You didn't enter a valid number (1-5)"	
+		else:
+			print "Wheeeeee!"
+			self.boredom -= fun
+			if self.boredom < 0:
+				self.boredom = 0
+			self.__pass_time()
 
 def main():
 	crit_name = raw_input("What do you want to name your critter?: ")
@@ -78,8 +91,3 @@ def main():
 
 main()
 ("\n\nPress the enter key to exit.")
-
-
-
-
-
