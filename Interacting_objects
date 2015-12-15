@@ -1,0 +1,24 @@
+# Interacting objects
+# 12/5/15		
+
+class Player(object):
+	"""A player in a shooting game"""
+	def blast(self, enemy):
+		print "The player blasts an enemy. \n"
+		enemy.die()
+
+class Alien(object):
+	"""An alien in a shooting game"""
+	def die(self):
+		print "The alien gasps and says, 'Oh, this is it. This is the big one'. \n" \
+		"'Yes, it's getting dark now. Please tell my 1.6 million larvae that I loved them.... '\n" \
+		"'Good bye, cruel universe'."
+
+print "\t\tDeath of an alien\n"
+
+hero = Player()
+invader = Alien()
+hero.blast(invader)
+
+raw_input("\n\nPress the enter key to exit.")
+
