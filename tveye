@@ -1,0 +1,68 @@
+# TV eye
+# OOP practice
+# 12/14/15
+
+class Television(object):
+	"""simulates a TV object"""
+	def __init__(self, channel = 3, volume = 25):
+		self.channel = channel
+		self.volume = volume
+
+	def __str__(self):
+		rep = "The channel is set to " + str(self.channel) + " and the volume to " + str(self.volume) + ". \n"
+		return rep
+
+	def set_channel(self):
+		channel = int(raw_input("What channel do you want to put? 1-65 \n"))
+		if channel in range(1, 65):
+			print "You accesed the channel number", channel
+			self.channel = channel
+		else:
+			print "You didn't enter a channel within the valid range! \n"
+			self.channel = 3
+
+	def set_volume(self):
+		volume = int(raw_input("What level do you want to set the volume to? 1-100 "))
+		if volume in range(1, 100):
+			print "You changed the volume to", volume
+			self.volume = volume
+		else:
+			print "You didn't enter a volume number within the valid range! \n"
+			self.volume = 25
+
+
+def main():
+	tveye = Television()
+	"""Main function. Displays a menu"""
+	
+	choice = None
+	while choice != 4:
+		print \
+		"""
+		Welcome to the TV EYE. What would you like to do?:
+
+		1- Netflix and Chill
+		2- Set the channel
+		3- Change the volume
+		4- Exit
+		"""
+		choice = int(raw_input("\nEnter a number: \n"))
+		if choice == 1:
+			print "You are now watching TV. Too bad you are alone."
+			print tveye
+		elif choice == 2:
+			tveye.set_channel()
+		elif choice == 3:
+			tveye.set_volume()
+		elif choice == 4:
+			print "And now, you are gone.\n"
+		else: 
+			print "Enter a number within the valid range\n"
+
+main()
+raw_input("\nPress anything to exit.\n")
+
+
+
+
+
