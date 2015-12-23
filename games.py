@@ -9,7 +9,7 @@ class Player(object):
 		self.score = score
 
 	def __str__(self):
-		rep = seld.name + ":\t" + str(self.score)
+		rep = self.name + ":\t" + str(self.score)
 		return rep
 
 def ask_yes_no(question):
