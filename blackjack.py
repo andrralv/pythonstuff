@@ -163,7 +163,9 @@ def main():
 	print "\t\tWelcome to Blackjack!\n"
 
 	names = []
-	number = games.ask_number("How many players? (1-7): ", low = 1, high = 8)
+	number = 0
+	if number > 7 or number <= 0:
+		number = games.ask_number("How many players? (1-7): ", low = 1, high = 8)
 	for i in range(number):
 		name = raw_input("Enter the player's name: ")
 		names.append(name)
