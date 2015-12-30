@@ -62,5 +62,3 @@ root.title("Movie Chooser")
 app = Application(root)
 root.mainloop()
 
-
-

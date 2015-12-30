@@ -63,6 +63,3 @@ root = Tk()
 root.title("Movie Chooser 2")
 app = Application(root)
 root.mainloop()
-
-
-
